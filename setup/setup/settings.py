@@ -25,8 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2(9t&bw1kp^%#lzsp(vhm=(0t-)zq@(63ha9t4-6p_mi)yiy07'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-# DEBUG = True
+# DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["xtrade-signals.herokuapp.com", "127.0.0.1"]
 # ALLOWED_HOSTS = []
