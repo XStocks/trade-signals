@@ -52,13 +52,26 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="features">Features</a></li>
-          <li><a class="active" href="pricing">Pricing</a></li>
+          {% if user.is_authenticated %}
+          <li>
+            <a href="/home">Home</a>
+          </li>
+          {% endif %}
+          <li><a href="pricing">Pricing</a></li>
           <li><a href="contact">Contact Us</a></li>
+          {% if user.is_authenticated %}
+          <li>
+            <a href="/logout" class="">Logout</a>
+          </li>
+          {% else %}
+          <li>
+            <a href="/login" class="">Login</a>
+          </li>
+          {% endif %}
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      </nav>
+      <!-- .navbar -->
 
     </div>
   </header><!-- End Header -->

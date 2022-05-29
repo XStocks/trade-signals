@@ -11,19 +11,19 @@ def index(request):
 # Create your views here.
 @login_required(login_url="/login")
 def home(request):    
-    # testHeaderData=['Sr.', 'Stock Name', 'Symbol', 'Links', '% Chg', 'Price', 'Volume']
-    # testStockData = [['1', 'Dr. Lal Path Labs Ltd.', 'LALPATHLAB', 'P&F | F.A', '9.67%', '2204.5'], ['2', 'INDIAMART', 'INDIAMART', 'P&F | F.A', '8.16%', '4515.3'], ['3', 'Mahindra Cie Automotive Limited', 'MAHINDCIE', 'P&F | F.A', '7.03%', '188.8'], ['4', 'ROUTE', 'ROUTE', 'P&F | F.A', '6.74%', '1193.1'], ['5', 'Balrampur Chini Mills Limited', 'BALRAMCHIN', 'P&F | F.A', '6.41%', '399.5'], ['6', 'Uflex Limited', 'UFLEX', 'P&F | F.A', '6.38%', '596.3'], ['7', 'Coforge (Niit Tech)', 'COFORGE', 'P&F | F.A', '5.57%', '3671.45'], ['8', 'Eid Parry India Limited', 'EIDPARRY', 'P&F | F.A', '5.33%', '528.8'], ['9', 'Jubilant Ingrevia Ltd', 'JUBLINGREA', 'P&F | F.A', '5.12%', '468.85'], ['10', 'Poonawalla Fincorp Ltd', 'POONAWALLA', 'P&F | F.A', '4.93%', '244.9'], ['11', 'Kei Industries Limited', 'KEI', 'P&F | F.A', '4.88%', '1205.05'], ['12', 'Firstsource Solutions Limited', 'FSL', 'P&F | F.A', '4.66%', '107.7'], ['13', 'Tata Steel Long Products Ltd', 'TATASTLLP', 'P&F | F.A', '4.64%', '663.15'], ['14', 'Cyient Limited', 'CYIENT', 'P&F | F.A', '3.86%', '780.8'], ['15', 'Tata Communications Limited', 'TATACOMM', 'P&F | F.A', '3.78%', '979.25'], ['16', 'Finolex Industries Limited', 'FINPIPE', 'P&F | F.A', '3.66%', '144.4'], ['17', 'Zee Entertainment Enterprises Limited', 'ZEEL', 'P&F | F.A', '3.31%', '237.4'], ['18', 'Larsen & Toubro Infotech Limited', 'LTI', 'P&F | F.A', '3.19%', '3998'], ['19', 'Aditya Birla Sun Life AMC Ltd', 'ABSLAMC', 'P&F | F.A', '3.13%', '425.65'], ['20', 'Indusind Bank Limited', 'INDUSINDBK', 'P&F | F.A', '3.1%', '925.4'], ['21', 'Wipro Limited', 'WIPRO', 'P&F | F.A', '3%', '466.95'], ['22', 'Indian Overseas Bank', 'IOB', 'P&F | F.A', '2.65%', '17.45'], ['23', 'Infosys Limited', 'INFY', 'P&F | F.A', '2.63%', '1461.35'], ['24', 'Trident Limited', 'TRIDENT', 'P&F | F.A', '2.58%', '45.8'], ['25', 'Hcl Technologies Limited', 'HCLTECH', 'P&F | F.A', '2.37%', '1003.9']]
-    # context={
-    #     'headerData':testHeaderData, 
-    #     'stockData':testStockData,
-    # }
-    [headerData, stockData]= asyncio.run(getData())
+    testHeaderData=['Sr.', 'Stock Name', 'Symbol', '% Chg', 'Price', 'Volume']
+    testStockData = [['1', 'Jindal Poly Films Limited', 'JINDALPOLY', '20%', '1090', '853,309'], ['2', 'Banco Products (i) Limited', 'BANCOINDIA', '19.99%', '151.85', '937,336'], ['3', 'Fairchem Organics Ltd', 'FAIRCHEMOR', '6.88%', '1319.65', '7,750'], ['4', 'ROUTE', 'ROUTE', '6.74%', '1193.1', '234,582'], ['5', 'Balrampur Chini Mills Limited', 'BALRAMCHIN', '6.41%', '399.5', '6,712,140'], ['6', 'Swelect Energy Systems Limited', 'SWELECTES', '4.99%', '342.9', '3,972'], ['7', 'Gulshan Polyols Limited', 'GULPOLY', '4.94%', '237.9', '45,187'], ['8', 'Kaushalya Infrastructure Development Corporation Limited', 'KAUSHALYA', '4.94%', '4.25', '37,204'], ['9', 'Kritika Wires Ltd', 'KRITIKA', '4.91%', '56.6', '57,812'], ['10', 'Standard Industries Limited', 'SIL', '4.87%', '22.6', '223,403'], ['11', 'Impex Ferro Tech Limited', 'IMPEXFERRO', '4.71%', '10', '11,647'], ['12', 'ZENITHSTL', 'ZENITHSTL', '4.61%', '7.95', '34,731'], ['13', 'Prozone Intu Properties Limited', 'PROZONINTU', '4.49%', '23.25', '95,969'], ['14', 'Ambika Cotton Mills Limited', 'AMBIKCO', '3.26%', '1847.15', '13,747'], ['15', 'Aditya Birla Sun Life AMC Ltd', 'ABSLAMC', '3.13%', '425.65', '92,795'], ['16', 'Veranda Learning Solutions Ltd', 'VERANDA', '2.76%', '197.65', '177,280'], ['17', 'Raj Rayon Industries Ltd', 'RAJRILTD', '1.74%', '8.75', '107'], ['18', 'Astral Poly Technik Limited', 'ASTRAL', '1.62%', '1689.3', '218,932']]
+    context={
+        'headerData':testHeaderData, 
+        'stockData':testStockData,
+    }
+    # [headerData, stockData]= asyncio.run(getData())
     # print("headerData:- ",headerData)
     # print("headerData:- ", stockData)
-    context={
-        'headerData':headerData, 
-        'stockData':stockData,
-    }
+    # context={
+    #     'headerData':headerData, 
+    #     'stockData':stockData,
+    # }
     return render(request,'stock-table.html', context)
 
 def contact(request):
