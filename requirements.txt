@@ -8,6 +8,7 @@ charset-normalizer==2.0.12
 cssselect==1.1.0
 Django==4.0.4
 fake-useragent==0.1.11
+gunicorn==20.1.0
 idna==3.3
 importlib-metadata==4.11.4
 lxml==4.8.0
