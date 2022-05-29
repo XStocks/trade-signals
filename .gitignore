@@ -1,6 +1,6 @@
 .DS_STORE
+.idea/
+__pycache__/
+env/
+db.sqlite3
 
-# Virtualenv related
-env
-include/
-pip-selfcheck.json
