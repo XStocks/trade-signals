@@ -18,8 +18,8 @@ def home(request):
     #     'stockData':testStockData,
     # }
     [headerData, stockData]= asyncio.run(getData())
-    print("headerData:- ",headerData)
-    print("headerData:- ", stockData)
+    # print("headerData:- ",headerData)
+    # print("headerData:- ", stockData)
     context={
         'headerData':headerData, 
         'stockData':stockData,
@@ -33,6 +33,8 @@ def pricing(request):
     return render(request, 'pricing.html')
 
 def signin(request):
+    if request.user.is_authenticated:
+        return redirect("/")
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
