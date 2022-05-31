@@ -1,1 +1,1 @@
-web: python setup.py runserver 0.0.0.0:$PORT
+web:gunicorn setup.wsgi --log-file -
