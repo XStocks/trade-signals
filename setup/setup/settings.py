@@ -28,8 +28,8 @@ SECRET_KEY = 'django-insecure-2(9t&bw1kp^%#lzsp(vhm=(0t-)zq@(63ha9t4-6p_mi)yiy07
 # DEBUG = False
 DEBUG = True
 
-ALLOWED_HOSTS = ["xtrade-signals.herokuapp.com", "127.0.0.1"]
-# ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ["test-trade-signals.herokuapp.com", "127.0.0.1"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
