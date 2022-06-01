@@ -16,7 +16,7 @@ async def getData():
     session._browser = browser    
     start = time.time()
     r =await session.get(URL)
-    await r.html.arender(timeout=30)
+    await r.html.arender(timeout=60)
     await session.close()
 
     headerData = [] 
