@@ -1,6 +1,17 @@
 version: '3.7'
 
 services:
+  db:
+    image: postgres:13
+    ports:
+      - ${DB_PORT}:5432
+    environment:
+      POSTGRES_USER: "${DB_USER}"
+      POSTGRES_PASSWORD: "${DB_PASSWORD}"
+      POSTGRES_DB: "${DB_NAME}"
+    volumes:
+      - db-data:/var/lib/postgresql
+
   django_gunicorn:
     volumes:
       - static:/app/staticfiles
@@ -10,14 +21,17 @@ services:
       context: .
     ports:
       - "8000:8000"
+    depends_on:
+      - db
   nginx:
     build: ./nginx
     volumes:
       - static:/app/staticfiles
     ports:
-      - "80:80"
+      - "8080:80"
     depends_on:
       - django_gunicorn
 
 volumes:
+  db-data:
   static:
