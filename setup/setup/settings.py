@@ -33,9 +33,9 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = env('DEBUG')
 
 # ALLOWED_HOSTS = ["test-trade-signals.herokuapp.com", "127.0.0.1"]
-ALLOWED_HOSTS = ["localhost"]
+ALLOWED_HOSTS = ['localhost', 'http://43.204.232.149']
 
-CSRF_TRUSTED_ORIGINS=["http://localhost"]
+CSRF_TRUSTED_ORIGINS=['http://localhost', 'http://43.204.232.149']
 
 
 # Application definition
