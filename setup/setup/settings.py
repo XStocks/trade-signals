@@ -30,7 +30,7 @@ SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
-DEBUG = env('DEBUG')
+DEBUG = env('DEBUG') == 'True'
 
 # ALLOWED_HOSTS = ["test-trade-signals.herokuapp.com", "127.0.0.1"]
 ALLOWED_HOSTS = ['http://localhost:8080', 'http://43.204.232.149','http://128.199.31.160:8080']
