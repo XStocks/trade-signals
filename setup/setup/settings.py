@@ -35,6 +35,8 @@ DEBUG = env('DEBUG')
 # ALLOWED_HOSTS = ["test-trade-signals.herokuapp.com", "127.0.0.1"]
 ALLOWED_HOSTS = ["localhost"]
 
+CSRF_TRUSTED_ORIGINS=["http://localhost"]
+
 
 # Application definition
 
@@ -89,7 +91,7 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-print("Hwllo",env('DB_HOST'))
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',

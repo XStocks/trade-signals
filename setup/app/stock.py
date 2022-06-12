@@ -1,18 +1,35 @@
-import pyppeteer
+from pyppeteer import launch
 from requests_html import AsyncHTMLSession
 import time
 #create the session
-
+import environ
+env = environ.Env()
+environ.Env.read_env()
 async def getData():
     URL = 'https://chartink.com/screener/rsi-above-80-in-5-min-time-frame'
-    session = AsyncHTMLSession()    
-    browser = await pyppeteer.launch({
-        'ignoreHTTPSErrors': True,
-        'headless': True,
-        'handleSIGINT': False,
-        'handleSIGTERM': False,
-        'handleSIGHUP': False
-    })
+    session = AsyncHTMLSession()   
+    mode = env('MODE')
+    if mode == "DEV":
+        browser = await launch({        
+            'ignoreHTTPSErrors': True,
+            'headless': True,
+            'handleSIGINT': False,
+            'handleSIGTERM': False,
+            'handleSIGHUP': False
+        })     
+
+    if mode == "PROD":
+        browser = await launch(
+            headless=True, 
+            ignoreHTTPSErrors=True,
+            executablePath='/usr/bin/google-chrome-stable',
+            args=[
+                '--no-sandbox',
+                '--single-process',
+                '--disable-dev-shm-usage',
+                '--disable-gpu',
+                '--no-zygote'
+            ])
     session._browser = browser    
     start = time.time()
     r =await session.get(URL)
