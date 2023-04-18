@@ -17,7 +17,7 @@ pip install -r requirements.txt
 Once you have the repository cloned and the dependencies installed, you can generate trading signals for various assets by running the `generate_signals.py` script. The script takes a single argument, which is the symbol for the asset you want to generate signals for.
 
 ```bash
-python generate_signals.py
+python manage.py runserver
 ```
 
 ## Contributing
